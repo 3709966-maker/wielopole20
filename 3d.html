@@ -42,7 +42,7 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 // ---------- geometry (metres). X = across (0 left wall … 4.1 right wall), Z = depth (0 back wall … 11.15 street), Y = up
-const T=0.45, W=4.1, Zp1=5.10, Zp2=5.50, Zf=11.30, L2=1.10, TOP=4.70, H1=4.60;
+const T=0.45, W=4.1, Zp1=5.10, Zp2=5.70, Zf=11.50, L2=1.10, TOP=4.70, H1=4.60;
 const canvas=document.getElementById('c');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
@@ -153,9 +153,9 @@ box(2.9,W,L2,L2+1.6,0.001,0.01,M.tile,scene,false);
 box(W-0.01,W-0.002,L2,L2+1.6,0,1.9,M.tile,scene,false);
 box(2.9,W,L2,L2+1.6,1.89,1.899,M.tile,scene,false);
 // niche (former server room) in partition, room-2 side
-box(0.2,1.0,L2,L2+2.4,Zp1-0.005,Zp1+0.2,M.wallCut,scene,false);
-box(0.35,0.85,L2+1.55,L2+1.85,Zp1-0.02,Zp1+0.1,M.white);
-box(0.35,0.6,L2+1.1,L2+1.4,Zp1-0.02,Zp1+0.1,M.white);
+box(0.2,1.0,L2,L2+2.4,Zp1-0.005,Zp1+0.35,M.wallCut,scene,false);
+box(0.35,0.85,L2+1.55,L2+1.85,Zp1+0.05,Zp1+0.33,M.white);
+box(0.35,0.6,L2+1.1,L2+1.4,Zp1+0.15,Zp1+0.33,M.white);
 // tile texture scale
 tile.repeat.set(2,4);
 
@@ -225,11 +225,13 @@ radiator(0.12,0.72,Zf-0.1,Zf,0.12,0.6);
 box(2.9,3.25,L2+1.55,L2+2.3,0.06,0.46,M.white);
 {const u=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.3,12),M.white);u.position.set(3.07,L2+2.45,0.26);scene.add(u);
  const f=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.3,12),M.white);f.rotation.z=Math.PI/2;f.position.set(2.92,L2+2.6,0.21);scene.add(f);
- const a=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.9,12),M.white);a.position.set(3.15,L2+2.65,0.06);a.rotation.z=Math.PI/2;a.position.x=3.6;scene.add(a);
- const a2=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.35,12),M.white);a2.position.set(3.15,L2+2.47,0.08);scene.add(a2);}
+ const a=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.4,12),M.white);a.rotation.z=Math.PI/2;a.position.set(3.35,L2+2.7,0.08);scene.add(a);
+ const a2=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.3,12),M.white);a2.position.set(3.15,L2+2.5,0.08);scene.add(a2);
+ const a3=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.12,12),M.white);a3.rotation.x=Math.PI/2;a3.position.set(3.53,L2+2.7,0.02);scene.add(a3);}
 // sink on left wall
 box(2.9,3.32,L2+0.78,L2+0.86,0.85,1.3,M.porcelain);
 {const ped=new THREE.Mesh(new THREE.CylinderGeometry(0.03,0.03,0.75,10),M.porcelain);ped.position.set(3.1,L2+0.4,1.07);scene.add(ped);}
+box(2.9,3.25,L2+0.78,L2+0.86,2.08,2.48,M.porcelain);   // sink in tambour
 // toilet under window
 {const bowl=new THREE.Mesh(new THREE.CylinderGeometry(0.19,0.15,0.4,20),M.porcelain);bowl.scale.z=1.35;bowl.position.set(3.55,L2+0.2,0.42);bowl.castShadow=true;scene.add(bowl);
  box(3.35,3.75,L2+0.42,L2+0.47,0.2,0.68,M.porcelain); box(3.36,3.74,L2+0.75,L2+1.1,0.01,0.2,M.porcelain);}
