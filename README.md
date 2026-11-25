@@ -8,6 +8,8 @@
 | `index.html` | 2D-план в масштабе: размеры, площади, уровни, двери, окна, коммуникации, таблица площадей |
 | `3d.html` | 3D-модель в браузере: вращение, готовые виды, срез стен, открывание дверей |
 | `plan_ru.svg`, `plan_pl.svg` | План отдельными векторными файлами (для печати или правок) |
+| `wyposazenie.html` | План с оборудованием (вариант «выпечка на месте»): 18 позиций, подключения, потоки сырья / готового продукта / отходов |
+| `3d-wyposazenie.html` | 3D-модель с оборудованием: номера = позиции экспликации, виды «Цех» и «Прилавок» |
 
 **Как открыть.** Скачайте репозиторий (Code → Download ZIP) и откройте `index.html` в браузере. Для 3D нужен интернет, библиотека three.js грузится с CDN.
 
@@ -19,4 +21,5 @@
 
 Interaktywny rzut i model 3D lokalu użytkowego (≈44 m², parter). Przełącznik języka RU / PL na obu stronach.
 `index.html` — rzut 2D z wymiarami i powierzchniami; `3d.html` — model 3D w przeglądarce.
+`wyposazenie.html` — rzut z wyposażeniem (wariant „wypiek na miejscu”, 18 pozycji, przyłącza, przepływy); `3d-wyposazenie.html` — model 3D z wyposażeniem.
 Wymiary oznaczone gwiazdką (*) są szacunkowe i wymagają pomiaru.
