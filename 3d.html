@@ -24,7 +24,7 @@
 <body>
 <canvas id="c"></canvas>
 <div id="top"><h1 data-i="h1"></h1><div data-i="sub"></div></div>
-<div id="nav"><a id="toPlan" href="index.html" data-i="plan"></a><button class="lg" data-lang="ru">RU</button><button class="lg" data-lang="pl">PL</button></div>
+<div id="nav"><a id="toPlan" href="index.html" data-i="plan"></a><a href="3d-wyposazenie.html" style="background:#2e8b3e;color:#fff;border-color:#2e8b3e" data-i="toEq"></a><button class="lg" data-lang="ru">RU</button><button class="lg" data-lang="pl">PL</button></div>
 <div id="hint" data-i="hint"></div>
 <div id="ui">
   <button data-v="overview" class="on"><span data-i="v_overview"></span></button>
@@ -307,11 +307,11 @@ document.getElementById('labels').onclick=e=>{labelsOn=!labelsOn;labelGroup.visi
 
 const I={
  ru:{h1:"ul. Wielopole 20 — 3D-модель помещения",sub:"Зал 23.8 м², h 4.60 · Помещение 2 ≈16.8 м², +1.10 м, h 3.60 · WC + тамбур",
-  hint:"Крутить: один палец / мышь · Зум: два пальца / колесо · Сдвиг: два пальца / правая кнопка",plan:"← План",
+  hint:"Крутить: один палец / мышь · Зум: два пальца / колесо · Сдвиг: два пальца / правая кнопка",plan:"← План",toEq:"С оборудованием →",
   v_overview:"Обзор",v_top:"Сверху",v_entrance:"От входа",v_stairs:"С лестницы в зал",v_room2:"Помещение 2",cut:"Срез стен",open:"Открыть двери",close:"Закрыть двери",labels:"Подписи",
   lab:[["Помещение 1 — зал","23.8 м² · пол −1.10 · h 4.60"],["Помещение 2","≈16.8 м² · пол ±0.00 · h 3.60"],["WC + котёл","≈2.28 м²"],["Тамбур","≈0.96 м²"],["Лестница","5 ступ. · +1.10 м"],["Задний выход","во двор"],["Вход","двустворчатая дверь 2.07"]]},
  pl:{h1:"ul. Wielopole 20 — model 3D lokalu",sub:"Sala 23,8 m², h 4,60 · Pom. 2 ≈16,8 m², +1,10 m, h 3,60 · WC + przedsionek",
-  hint:"Obrót: jeden palec / mysz · Zoom: dwa palce / kółko · Przesuw: dwa palce / prawy przycisk",plan:"← Rzut",
+  hint:"Obrót: jeden palec / mysz · Zoom: dwa palce / kółko · Przesuw: dwa palce / prawy przycisk",plan:"← Rzut",toEq:"Z wyposażeniem →",
   v_overview:"Widok ogólny",v_top:"Z góry",v_entrance:"Od wejścia",v_stairs:"Ze schodów na salę",v_room2:"Pomieszczenie 2",cut:"Przekrój ścian",open:"Otwórz drzwi",close:"Zamknij drzwi",labels:"Opisy",
   lab:[["Pom. 1 — sala","23,8 m² · poz. −1,10 · h 4,60"],["Pomieszczenie 2","≈16,8 m² · poz. ±0,00 · h 3,60"],["WC + piec","≈2,28 m²"],["Przedsionek","≈0,96 m²"],["Schody","5 stopni · +1,10 m"],["Wyjście tylne","na podwórze"],["Wejście","drzwi dwuskrzydłowe 2,07"]]}};
 let lang=(new URLSearchParams(location.search).get('lang'))||(()=>{try{return localStorage.getItem('w20lang')}catch(e){return null}})()||'ru';
